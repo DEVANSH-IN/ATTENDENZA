@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+    <title>Signup Page</title>
+    <script>
+        function validateSignupForm() {
+            var email = document.getElementById("emailForm").value;
+            var password = document.getElementById("passwordForm").value;
+            var teacherId = document.getElementById("teacherIdForm").value;
+            var firstName = document.getElementById("firstNameForm").value;
+            var lastName = document.getElementById("lastNameForm").value;
+
+            // Check if email, password, teacherId, firstName, and lastName are not empty
+            if (email.trim() === "" || password.trim() === "" || teacherId.trim() === "" || firstName.trim() === "" || lastName.trim() === "") {
+                alert("Please fill in all the required fields.");
+                return false;
+            }
+
+            // You can add more complex validation if needed
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="login-card-container">
+        <div class="login-card">
+            <div class="login-card-logo">
+                <img src="clear_background.png" alt="logo">
+            </div>
+            <div class="login-card-header">
+                <h1>Admin Sign Up</h1>
+                <div>Create your account</div>
+            </div>
+            <form class="login-card-form" onsubmit="return validateSignupForm()">
+                <div class="form-item">
+                    <span class="form-item-icon material-symbols-rounded"></span>
+                    <input type="text" placeholder="Enter Teacher ID" id="teacherIdForm" required>
+                </div>
+                <div class="form-item">
+                    <span class="form-item-icon material-symbols-rounded"></span>
+                    <input type="text" placeholder="Enter email id" id="emailForm" autofocus required>
+                </div>
+                <div class="form-item">
+                    <span class="form-item-icon material-symbols-rounded"></span>
+                    <input type="password" placeholder="Enter Password" id="passwordForm" required>
+                </div>
+                
+                <div class="form-item">
+                    <span class="form-item-icon material-symbols-rounded"></span>
+                    <input type="text" placeholder="Enter First Name" id="firstNameForm" required>
+                </div>
+                <div class="form-item">
+                    <span class="form-item-icon material-symbols-rounded"></span>
+                    <input type="text" placeholder="Enter Last Name" id="lastNameForm" required>
+                </div>
+                <div class="form-item-other">
+                    <div class="checkbox">
+                        <input type="checkbox" id="termsCheckbox" required>
+                        <label for="termsCheckbox">I agree to the terms and conditions</label>
+                    </div>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <div class="login-card-footer">
+                Already have an account? <a href="./index.html">Sign In</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
